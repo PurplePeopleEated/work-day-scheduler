@@ -2,6 +2,16 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  // Reference DOM elements using jQuery
+
+  // Add event listener for clicks on save buttons
+  $('.saveBtnEl').on('click', 'saveBtn', function(event) {
+    // Prevent default behavior/event bubbling
+    event.preventDefault();
+    console.log( $(this).text() );
+
+  })
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
