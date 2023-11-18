@@ -5,11 +5,12 @@ $(function () {
   // Reference DOM elements using jQuery
 
   // Add event listener for clicks on save buttons
-  $('.saveBtnEl').on('click', 'saveBtn', function(event) {
+  $('.saveBtn').on('click', function(event) {
     // Prevent default behavior/event bubbling
     event.preventDefault();
-    console.log( $(this).text() );
-
+    // Pull ID from parent element 
+    const timeBlockID = $(this).closest('.time-block').attr('id');
+    console.log(timeBlockID);
   })
 
   // TODO: Add a listener for click events on the save button. This code should
@@ -18,7 +19,7 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  //
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
