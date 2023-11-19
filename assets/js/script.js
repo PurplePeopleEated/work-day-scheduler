@@ -11,6 +11,9 @@ $(function () {
     // Pull ID from parent element 
     const timeBlockID = $(this).closest('.time-block').attr('id');
     console.log(timeBlockID);
+    // Save user input with time block id to local storage
+    const userInput = $(this).siblings('.description').val();
+    localStorage.setItem(timeBlockID, userInput);
   })
 
   // TODO: Add a listener for click events on the save button. This code should
