@@ -2,7 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-
   // Add event listener for clicks on save buttons
   $('.saveBtn').on('click', function(event) {
     // Prevent default behavior/event bubbling
