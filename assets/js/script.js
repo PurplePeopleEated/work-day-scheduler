@@ -18,9 +18,9 @@ $(function () {
 
   function displayCurrentTime() {
     // Get current time using day.js
-    const now = dayjs().format('11');
+    const now = dayjs().format('MMM D, YYYY');
     $('#currentDay').text(now);
-  };
+  }
 
   $('.time-block').each(function() {
     let currentHour = dayjs().hour();
