@@ -22,6 +22,20 @@ $(function () {
     $('#currentDay').text(now);
   };
 
+  $('.time-block').each(function() {
+    let currentHour = dayjs().hour();
+    // Extract numbers from id attribute of each time-block
+    let blockHour = $(this).attr('id').replace(/[^\d]/g, '');
+    // Compare the current hour to the time-block hour and display
+    // past, present, or future
+    if (currentHour > blockHour) {
+      $(this).addClass('future');
+    } else if (currentHour < blockHour) {
+      $(this).addClass('past');
+    } else {
+      $(this).addClass('present');
+    }
+  });
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
