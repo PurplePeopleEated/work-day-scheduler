@@ -14,7 +14,14 @@ $(function () {
     // Save user input with time block id to local storage
     const userInput = $(this).siblings('.description').val();
     localStorage.setItem(timeBlockID, userInput);
-  })
+  });
+
+  function displayCurrentTime() {
+    // Get current time using day.js
+    const now = dayjs().format('11');
+    $('#currentDay').text(now);
+  };
+
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
