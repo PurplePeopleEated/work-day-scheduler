@@ -37,6 +37,17 @@ $(function () {
     }
   });
 
+  // Retrieve localStorage info and display
+  $('.time-block').each(function() {
+    let timeID = $(this).attr('id');
+    let savedData = localStorage.getItem(timeID);
+
+    if (savedData) {
+      $(this).find('.description').val(savedData);
+    }
+  });
+
+  displayCurrentTime();
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
